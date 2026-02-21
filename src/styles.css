@@ -1,8 +1,11 @@
+@import 'prismjs/themes/prism-tomorrow.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+
   html,
   body {
     @apply h-full bg-slate-100 text-slate-900 antialiased;

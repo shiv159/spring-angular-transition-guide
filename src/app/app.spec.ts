@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
+import { provideRouter } from '@angular/router';
+import { TRANSITION_TOPICS } from './transition-topics';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideRouter([])]
     }).compileComponents();
   });
 
@@ -14,9 +17,8 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should expose 12 transition topics', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app.topics().length).toBe(12);
+  it('should have correct total topics length', () => {
+    // 11 original + 7 from first batch + 4 from SudheerJ batch = 22 total topics
+    expect(TRANSITION_TOPICS.length).toBe(22);
   });
 });
